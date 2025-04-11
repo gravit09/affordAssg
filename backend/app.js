@@ -43,6 +43,7 @@ app.post("/getData", async (req, res) => {
         windSpeed: data.wind.speed,
         windDirection: data.wind.deg,
         visibility: data.visibility,
+        timestamp: data.dt,
         pressure: data.main.pressure,
       },
     });
