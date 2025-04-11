@@ -4,15 +4,24 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
+import axios from "axios";
 
 const SearchBar = () => {
   const [city, setCity] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Add your search logic here
+  const handleSubmit = async (e: React.FormEvent) => {
     setIsLoading(true);
+    e.preventDefault();
+    const current = await axios.post(
+      `http://localhost:4000/getCurrentWeather/${city}`
+    );
+    const fiveDays = await axios.post(
+      `http://localhost:4000/getFiveDaysWeather/${city}`
+    );
+    console.log(current.data);
+    console.log(fiveDays.data);
+    setIsLoading(false);
   };
 
   return (
