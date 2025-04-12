@@ -9,7 +9,10 @@ import {
   Wind,
 } from "lucide-react";
 
-export function getWeatherIcon(condition: string) {
+/*function to get Images acc to weather */
+export function getWeatherIcon(condition: string | undefined) {
+  if (!condition) return Wind;
+
   switch (condition.toLowerCase()) {
     case "clear":
       return Sun;
@@ -32,7 +35,10 @@ export function getWeatherIcon(condition: string) {
   }
 }
 
-export function getWeatherGradient(condition: string) {
+/*Gradient for Weather card spread from left to right */
+export function getWeatherGradient(condition: string | undefined) {
+  if (!condition) return "bg-gradient-to-br from-sky-400 to-sky-600";
+
   switch (condition.toLowerCase()) {
     case "clear":
       return "bg-gradient-to-br from-amber-400 to-orange-500";
