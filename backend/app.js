@@ -8,6 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const baseUrl = "https://api.openweathermap.org/data/2.5/weather";
 const daysWeatherUrl = "https://api.openweathermap.org/data/2.5/forecast";
+const port = process.env.PORT || 4000;
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
@@ -119,6 +120,6 @@ app.post("/getFiveDaysWeather/:city", async (req, res) => {
   }
 });
 
-app.listen(4000, () => {
+app.listen(port, () => {
   console.log("Server is running on port 4000");
 });

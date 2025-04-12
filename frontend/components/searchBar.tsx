@@ -49,10 +49,10 @@ const SearchBar = () => {
 
     try {
       const current = await axios.post(
-        `http://localhost:4000/getCurrentWeather/${city}`
+        `https://afforbackend.onrender.com/getCurrentWeather/${city}`
       );
       const fiveDays = await axios.post(
-        `http://localhost:4000/getFiveDaysWeather/${city}`
+        `https://afforbackend.onrender.com/getFiveDaysWeather/${city}`
       );
 
       setCurrentWeather(current.data.data);
