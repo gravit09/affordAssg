@@ -106,7 +106,3 @@ weather-app/
   - Node.js
   - Express
   - OpenWeather API
-
-## License
-
-This project is licensed under the MIT License.
